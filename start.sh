@@ -6,3 +6,4 @@ fi
 
 docker exec -it app chmod -R 777 laravel-project/storage
 docker exec -it app chmod -R 777 laravel-project/bootstrap/cache
+docker exec -it app /bin/bash -c "cd /var/www/laravel-project && php artisan migrate"
