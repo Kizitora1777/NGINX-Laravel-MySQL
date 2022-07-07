@@ -10,6 +10,18 @@
     <div class="row justify-content-center mb-3">
         <div class="col-md-8">
             <div class="card">
+                <div class="card-header">test</div>
+                <div>
+                    @foreach($studies as $study)
+                    <div id="abc">{{ $study->subject }}</div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-8">
+            <div class="card">
                 <div class="card-header">あなたの勉強時間</div>
                 <div class="learning-time text-center">
                     <canvas id="japanese_people_chart" width="400" height="400"></canvas>
