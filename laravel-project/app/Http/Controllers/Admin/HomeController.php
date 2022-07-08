@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Study;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 
 class HomeController extends Controller
 {
@@ -24,6 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $studies = Study::all();
+        $data = ['msg' => '勉強時間','studies' => $studies];
+        return view('admin.home',$data);
     }
 }
