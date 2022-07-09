@@ -1,24 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="css/hidden.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
 <script src="{{ asset('/js/makegraph.js') }}"></script>
 
 <div class="container">
-    <div class="row justify-content-center mb-3">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">test</div>
-                <div>
-                    @foreach($studies as $study)
-                    <div id="abc">{{ $study->subject }}</div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="row justify-content-center mb-3">
         <div class="col-md-8">
             <div class="card">
@@ -160,4 +149,5 @@
         </div>
     </div>
 </div>
+<div id="datas" class="hidden"> {{ $studies[0]->subject }} </div>
 @endsection
