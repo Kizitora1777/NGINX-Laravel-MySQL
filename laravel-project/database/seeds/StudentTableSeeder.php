@@ -3,7 +3,7 @@
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
-class StudyTableSeeder extends Seeder
+class StudentTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -50,6 +50,5 @@ class StudyTableSeeder extends Seeder
                 'updated_at' => $date,
             ]);
         }
-
     }
 }
