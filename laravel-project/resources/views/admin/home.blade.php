@@ -18,25 +18,7 @@
         </div>
         
         <div class="table">
-            <table class="table">
-                <tr>
-                <th>学生番号</th>
-                <th></th>
-                <th>商品名</th>
-                <th>価格</th>
-                </tr>
-                <tr>
-                <td>1</td>
-                <td>Panasonic</td>
-                <td>DVDレコーダー</td>
-                <td>59800</td>
-                </tr>
-                </table>
-        </div>
-    </div>
-    <div>
-        <h1>{{ $msg }}</h1>
-        <table border="1">
+        <table class="table">
             <tr>
                 <th>科目</th>
                 <th>時間</th>
@@ -45,12 +27,14 @@
             @foreach ($studies as $study)
             <tr>
                 <td>{{ $study->subject }}</td>
-                <td>{{ $study->hour }}</td>
-                <td>{{ $study->minute }}</td>
+                <td>{{ $study::where('subject',$study->subject)->sum("hour") }}</td>
+                <td>{{ $study::where('subject',$study->subject)->sum("minute") }}</td>
             </tr>
             @endforeach
         </table>
     </div>
+    </div>
+
 
 </div>
 

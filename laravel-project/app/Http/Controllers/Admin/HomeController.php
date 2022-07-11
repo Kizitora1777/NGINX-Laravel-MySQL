@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Study;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Study;
 
 class HomeController extends Controller
 {
