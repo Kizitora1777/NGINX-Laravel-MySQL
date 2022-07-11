@@ -149,5 +149,4 @@
         </div>
     </div>
 </div>
-<div id="datas" class="hidden"> {{ $studies[0]->subject }} </div>
 @endsection
