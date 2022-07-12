@@ -162,20 +162,67 @@
 </div>
 
 <script>
-    let y = [1, 2, 3, 4, 5, 6]
-    let context = document.querySelector("#japanese_people_chart").getContext('2d')
-    new Chart(context, {
-    type: 'bar',
+    const studies = @json($students);
+    
+    // DEBUG
+    /*
+    studies.forEach(function(element) {
+        console.log(element);
+    });
+    */
+
+    const ctx = document.getElementById('japanese_people_chart').getContext('2d');
+
+    let years = ["2022-07-06", "2022-07-07", "2022-07-08", "2022-07-09", "2022-07-10", "2022-07-11", "2022-07-12"];
+    let times = ["03:25:00", "05:00:00", "00:00:00", "05:10:00", "06:00:00", "02:05:00", "01:25:00"];
+  
+    let data = years.map((year, index) => ({
+    x: moment(`${year}`), 
+    y: moment(`1970-02-01 ${times[index]}`).valueOf()
+    }));
+
+  let myChart = new Chart(ctx, {
+    type: 'line',
     data: {
-    labels: ['2015年', '2016年', '2017年', '2018年', '2019年', '2020年'],
-        datasets: [{
-        label: "日本の人口推移",
-        data: y,
-        }],
+        datasets: [
+            {
+                label: "勉強時間",
+                backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                data: data,
+                pointBorderWidth: 2,
+                pointRadius: 5,
+                pointHoverRadius: 7
+            }
+        ]
     },
     options: {
-        responsive: false
+        scales: {
+            x: {
+                type: 'time',
+                time: {
+                  unit: 'day'
+                }
+              },
+            y: {
+                type: 'linear',
+                position: 'left',
+                ticks: {
+                  min: moment('1970-02-01 00:00:00').valueOf(),
+                  max: moment('1970-02-01 23:59:59').valueOf(),
+                  stepSize: 3.6e+6,
+                  beginAtZero: false,
+                  callback: value => {
+                    let date = moment(value);
+                    if(date.diff(moment('1970-02-01 23:59:59'), 'minutes') === 0) {
+                      return null;
+                    }
+                    
+                    return date.format('H');
+                  }
+                }
+            }
+        }
     }
-    })
+    });
 </script>
 @endsection
