@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
-<script src="{{ asset('/js/makegraph.js') }}"></script>
 
 <div class="container">
     <div class="row justify-content-center mb-3">
@@ -149,4 +148,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    let y = [1, 2, 3, 4, 5, 6]
+    let context = document.querySelector("#japanese_people_chart").getContext('2d')
+    new Chart(context, {
+    type: 'bar',
+    data: {
+    labels: ['2015年', '2016年', '2017年', '2018年', '2019年', '2020年'],
+        datasets: [{
+        label: "日本の人口推移",
+        data: y,
+        }],
+    },
+    options: {
+        responsive: false
+    }
+    })
+</script>
 @endsection
