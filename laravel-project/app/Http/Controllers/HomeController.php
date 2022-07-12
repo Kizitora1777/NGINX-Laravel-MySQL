@@ -24,10 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $student = Student::all();
+        $students = Student::all();
 
         return view('home', [
-            'students' => $student
+            'students' => $students
         ]);
     }
 }
