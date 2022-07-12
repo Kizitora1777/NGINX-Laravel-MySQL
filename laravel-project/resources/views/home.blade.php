@@ -6,6 +6,18 @@
 </head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
 
+{{-- chartjs-adapter-date-fns --}}
+<script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+{{-- chartjs-adapter-luxon --}}
+<script src="https://cdn.jsdelivr.net/npm/luxon@^2"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@^1"></script>
+
+{{-- chartjs-adapter-moment --}}
+<script src="https://cdn.jsdelivr.net/npm/moment@^2"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
+
 <div class="container">
     <div class="row justify-content-center mb-3">
         <div class="col-md-8">
