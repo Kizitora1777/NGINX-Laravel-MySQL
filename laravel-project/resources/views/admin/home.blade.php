@@ -20,15 +20,15 @@
         <div class="table">
         <table class="table">
             <tr>
-                <th>科目</th>
+                <th>学生番号</th>
                 <th>時間</th>
                 <th>分</th>
             </tr>
-            @foreach ($studies as $study)
+            @foreach ($students as $student)
             <tr>
-                <td>{{ $study->subject }}</td>
-                <td>{{ $study::where('subject',$study->subject)->sum("hour") }}</td>
-                <td>{{ $study::where('subject',$study->subject)->sum("minute") }}</td>
+                <td>{{ $student->user_id }}</td>
+                <td>{{ $student::where('subject',$student->subject)->sum("hour") }}</td>
+                <td>{{ $student::where('subject',$student->subject)->sum("minute") }}</td>
             </tr>
             @endforeach
         </table>

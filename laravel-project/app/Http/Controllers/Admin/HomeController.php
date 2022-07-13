@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Study;
+use App\Student;
 
 class HomeController extends Controller
 {
@@ -25,8 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $studies = Study::all();
-        $data = ['msg' => '勉強時間','studies' => $studies];
+        $students = Student::all();
+        //$data = ['msg' => '勉強時間','students' => $students];
+        $data = ['msg' => 'みんなの勉強時間','students' => $students];
+        //$studies = Study::select('user_id') -> selectRaw('SUM(hour) as time') ->groupBy('user_id') ->get();
+
         return view('admin.home',$data);
     }
 }
