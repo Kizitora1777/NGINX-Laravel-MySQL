@@ -34,7 +34,8 @@
             <div class="card">
                 <div class="card-header">勉強時間を追加する</div>
                 <div class="add-learning-time">
-                    <form>
+                    <form action="{{ route('home') }}" method="post">
+                        @csrf
                         <table border="0" cellpadding="0" cellspacing="0" width="100%" class="table table-borderless">
                             <tbody>
                                 <tr>
@@ -152,7 +153,7 @@
                         </div>
 
                         <div class="text-center my-5">
-                        <button type="submit" class="btn btn-primary btn-block">勉強時間を登録(送信しません)</button>
+                        <button type="submit" class="btn btn-primary btn-block">勉強時間を登録する</button>
                         </div>
                     </form>
                 </div>
