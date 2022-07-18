@@ -30,4 +30,21 @@ class HomeController extends Controller
             'students' => $students
         ]);
     }
+
+    public function create(Request $request)
+    {
+        $study = new Student();
+
+        $study->subject = $request->subject;
+        $study->hour = $request->hour;
+        $study->minute = $request->minute;
+        $study->comment = $request->comment;
+        $study->user_id = 5409;
+
+        $study->save();
+
+        return redirect()->route('home', [
+            'id' => $study->id,
+        ]);
+    }
 }
