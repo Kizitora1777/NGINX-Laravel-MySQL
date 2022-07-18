@@ -82,6 +82,7 @@
                                         <td>
                                             <select name="minute" class="minute">
                                                 <option disabled selected>分</option>
+                                                <option value="01">00</option>
                                                 <option value="01">01</option>
                                                 <option value="02">02</option>
                                                 <option value="03">03</option>
