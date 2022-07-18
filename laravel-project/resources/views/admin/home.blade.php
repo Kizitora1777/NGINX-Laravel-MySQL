@@ -21,14 +21,12 @@
         <table class="table">
             <tr>
                 <th>学生番号</th>
-                <th>時間</th>
-                <th>分</th>
+                <th>勉強時間</th>
             </tr>
             @foreach ($students as $student)
             <tr>
                 <td>{{ $student->user_id }}</td>
-                <td>{{ $student::where('subject',$student->subject)->sum("hour") }}</td>
-                <td>{{ $student::where('subject',$student->subject)->sum("minute") }}</td>
+                <td>{{ floor($student->time / 60) }}時間{{ $student->time % 60}}分</td>
             </tr>
             @endforeach
         </table>

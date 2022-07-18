@@ -25,11 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
-        //$data = ['msg' => '勉強時間','students' => $students];
+        //$students = Student::all();
+        //$students = Student::select('user_id') -> selectRaw('SUM(hour) as hours') -> groupBy('user_id')->get();
+        $students = Student::select('user_id') -> selectRaw('SUM(hour) * 60 + SUM(minute) as time') -> groupBy('user_id')->get();
+        //$minutes = Student::select('user_id') -> selectRaw('SUM(minute) as minutes') -> groupBy('user_id')->first();
+        //$students = Student::select('user_id') -> selectRaw('SUM(hour)') -> groupBy('user_id') -> get();
         $data = ['msg' => 'みんなの勉強時間','students' => $students];
-        //$studies = Study::select('user_id') -> selectRaw('SUM(hour) as time') ->groupBy('user_id') ->get();
-
+        //$data = ['msg' => 'みんなの勉強時間','students' => $students,'minutes' => $minutes];
         return view('admin.home',$data);
     }
 }
