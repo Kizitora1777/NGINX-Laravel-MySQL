@@ -25,15 +25,9 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {   
-        // $students = Student::all();
-        // foreach($students as $student){
-        //     $studentday = Carbon::parse($student->created_at);
-        // }
-        // $sevendays = Carbon::today()->subDay(7);
-        // $students = Student::whereDate('created_at', '>=', $sevendays)->get();
-
-        $students = Student::select('user_id') 
+    {   $today = Carbon::now()->format('Y-m-d');
+        $students = Student::whereDate('created_at',$today)
+                    -> select('user_id') 
                     -> selectRaw('SUM(hour) * 60 + SUM(minute) as time') 
                     -> groupBy('user_id')
                     -> get();
