@@ -32,15 +32,36 @@
             @foreach ($students as $student)
             <tr>
                 <td>{{ $student->user_id }}</td>
-                <td>{{ floor($student->time / 60) }}時間{{ $student->time % 60}}分</td>
-                <td>{{ floor($student->time / 60) }}時間{{ $student->time % 60}}分</td>
-                <td>{{ floor($student->time / 60) }}時間{{ $student->time % 60}}分</td>
-                <td>{{ floor($student->time / 60) }}時間{{ $student->time % 60}}分</td>
-                <td>{{ floor($student->time / 60) }}時間{{ $student->time % 60}}分</td>
-                <td>{{ floor($student->time / 60) }}時間{{ $student->time % 60}}分</td>
+            </tr>
+            <tr>
                 <td>{{ floor($student->time / 60) }}時間{{ $student->time % 60}}分</td>
             </tr>
             @endforeach
+
+            @foreach ($students2 as $student2)
+                <td>{{ floor($student2->time / 60) }}時間{{ $student2->time % 60}}分</td>
+            @endforeach
+
+            @foreach ($students3 as $student3)
+                <td>{{ floor($student3->time / 60) }}時間{{ $student3->time % 60}}分</td>
+            @endforeach
+
+            @foreach ($students4 as $student4)
+                <td>{{ floor($student4->time / 60) }}時間{{ $student4->time % 60}}分</td>
+            @endforeach
+
+            @foreach ($students5 as $student5)
+                <td>{{ floor($student5->time / 60) }}時間{{ $student5->time % 60}}分</td>
+            @endforeach
+
+            @foreach ($students6 as $student6)
+                <td>{{ floor($student6->time / 60) }}時間{{ $student6->time % 60}}分</td>
+            @endforeach
+
+            @foreach ($students7 as $student7)
+                <td>{{ floor($student6->time / 60) }}時間{{ $student6->time % 60}}分</td>
+            @endforeach
+            <tr>
         </table>
     </div>
 <!-- <script>
