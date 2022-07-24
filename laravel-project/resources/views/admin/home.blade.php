@@ -120,6 +120,7 @@
             </table>
         </div>
     </div>
+<!-- 表示がうまくいってないので修正する -->
 <script>
     const studies = @json($students);
     
