@@ -32,49 +32,48 @@ class HomeController extends Controller
                     -> selectRaw('SUM(hour) * 60 + SUM(minute) as time') 
                     -> groupBy('user_id')
                     -> get();
-
-        $yesterday = Carbon::yesterday()->format('Y-m-d');
+        $yesterday = Carbon::now()->subday(1)->format('Y-m-d');
         $students2 = Student::whereDate('created_at',$yesterday)
         -> select('user_id') 
         -> selectRaw('SUM(hour) * 60 + SUM(minute) as time') 
         -> groupBy('user_id')
         -> get();
 
-        $three_day_ago = Carbon::yesterday()->subDay()->format('Y-m-d');
+        $three_day_ago = Carbon::now()->subday(2)->format('Y-m-d');
         $students3 = Student::whereDate('created_at',$three_day_ago)
         -> select('user_id') 
         -> selectRaw('SUM(hour) * 60 + SUM(minute) as time') 
         -> groupBy('user_id')
         -> get();
 
-        $four_day_ago = Carbon::yesterday()->subDay()->subDay()->format('Y-m-d');
+        $four_day_ago = Carbon::now()->subday(3)->format('Y-m-d');
         $students4 = Student::whereDate('created_at',$four_day_ago)
         -> select('user_id') 
         -> selectRaw('SUM(hour) * 60 + SUM(minute) as time') 
         -> groupBy('user_id')
         -> get();
 
-        $five_day_ago = Carbon::yesterday()->subDay()->subDay()->subDay()->format('Y-m-d');
+        $five_day_ago = Carbon::now()->subday(4)->format('Y-m-d');
         $students5 = Student::whereDate('created_at',$five_day_ago)
         -> select('user_id') 
         -> selectRaw('SUM(hour) * 60 + SUM(minute) as time') 
         -> groupBy('user_id')
         -> get();
 
-        $six_day_ago = Carbon::yesterday()->subDay()->subDay()->subDay()->subDay()->format('Y-m-d');
+        $six_day_ago = Carbon::now()->subday(5)->format('Y-m-d');
         $students6 = Student::whereDate('created_at',$six_day_ago)
         -> select('user_id') 
         -> selectRaw('SUM(hour) * 60 + SUM(minute) as time') 
         -> groupBy('user_id')
         -> get();
 
-        $seven_day_ago = Carbon::yesterday()->subDay()->subDay()->subDay()->subDay()->subDay()->format('Y-m-d');
+        $seven_day_ago = Carbon::now()->subday(6)->format('Y-m-d');
         $students7 = Student::whereDate('created_at',$seven_day_ago)
         -> select('user_id') 
         -> selectRaw('SUM(hour) * 60 + SUM(minute) as time') 
         -> groupBy('user_id')
         -> get();
-
+        //$data = ['msg' => 'みんなの勉強時間','students' => $students,'today' => $today];
         $data = ['msg' => 'みんなの勉強時間','students' => $students,'students2' => $students2,'students3' => $students3,'students4' => $students4,'students5' => $students5,'students6' => $students6,'students7' => $students7];
         return view('admin.home',$data);
     }

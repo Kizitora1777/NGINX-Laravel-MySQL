@@ -1,38 +1,24 @@
-@extends('layouts.app')
+@extends('layouts.app_admin')
 
 @section('content')
-<link href="css/hidden.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
+</head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
-
-{{-- chartjs-adapter-date-fns --}}
-<script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
-
-{{-- chartjs-adapter-luxon --}}
-<script src="https://cdn.jsdelivr.net/npm/luxon@^2"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@^1"></script>
-
-{{-- chartjs-adapter-moment --}}
-<script src="https://cdn.jsdelivr.net/npm/moment@^2"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
-
+<script src="{{ asset('/js/makegraph.js') }}"></script>
 
 <div class="container">
     <div class="row justify-content-center mb-3">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">みんなの勉強時間</div>
+                <div class="card-header">あなたの勉強時間</div>
                 <div class="learning-time text-center">
                     <canvas id="japanese_people_chart" width="400" height="400"></canvas>
                 </div>
+                </div>
             </div>
         </div>
-    </div>
-        <div>
-        <table class="table table-bordered">
-            <!-- 汚い入れ子構造になっているのでどうにかしたい。 -->
+        <div class="table">
+        <table class="table">
             <tr>
                 <th>学生番号</th>
                 <th><? $today = date("m/d",strtotime("-6 day"));print_r($today); ?></th>
@@ -43,84 +29,40 @@
                 <th><? $today = date("m/d",strtotime("-1 day"));print_r($today); ?></th>
                 <th><? $today = date("m/d");print_r($today); ?></th>
             </tr>
+
+            @foreach ($students as $student)
             <tr>
-                <td>
-                    <table class="table-borderless">
-                        @foreach ($students as $student)
-                        <tr>
-                            <td>{{ $student->user_id }}</td>
-                        </tr>
-                        @endforeach
-                    </table>
-                </td>
-                <td>
-                    <table class="table-borderless">
-                        @foreach ($students as $student)
-                        <tr>
-                            <td>{{ floor($student->time / 60) }}時間{{ $student->time % 60}}分</td>
-                        </tr>
-                        @endforeach
-                    </table>
-                </td>
-                <td>
-                    <table class="table-borderless">
-                        @foreach ($students2 as $student2)
-                        <tr>
-                            <td>{{ floor($student2->time / 60) }}時間{{ $student2->time % 60}}分</td>
-                        </tr>
-                        @endforeach
-                    </table>
-                </td>
-                <td>
-                    <table class="table-borderless">
-                        @foreach ($students3 as $student3)
-                        <tr>
-                            <td>{{ floor($student3->time / 60) }}時間{{ $student3->time % 60}}分</td>
-                        </tr>
-                        @endforeach
-                    </table>
-                </td>
-                <td>
-                    <table class="table-borderless">
-                        @foreach ($students4 as $student4)
-                        <tr>
-                            <td>{{ floor($student4->time / 60) }}時間{{ $student4->time % 60}}分</td>
-                        </tr>
-                        @endforeach
-                    </table>
-                </td>
-                <td>
-                    <table class="table-borderless">
-                        @foreach ($students5 as $student5)
-                        <tr>
-                            <td>{{ floor($student5->time / 60) }}時間{{ $student5->time % 60}}分</td>
-                        </tr>
-                        @endforeach
-                    </table class="table-borderless">
-                </td>
-                <td>
-                    <table class="table-borderless">
-                        @foreach ($students6 as $student6)
-                        <tr>
-                            <td>{{ floor($student6->time / 60) }}時間{{ $student6->time % 60}}分</td>
-                        </tr>
-                        @endforeach
-                    </table>
-                </td>
-                <td>
-                    <table class="table-borderless">
-                        @foreach ($students7 as $student7)
-                        <tr>
-                            <td>{{ floor($student7->time / 60) }}時間{{ $student7->time % 60}}分</td>
-                        </tr>
-                        @endforeach
-                    </table>
-                </td>
+                <td>{{ $student->user_id }}</td>
+                <td>{{ floor($student->time / 60) }}時間{{ $student->time % 60}}分</td>
+            @endforeach
+
+            @foreach ($students2 as $student2)
+                <td>{{ floor($student2->time / 60) }}時間{{ $student2->time % 60}}分</td>
+            @endforeach
+
+            @foreach ($students3 as $student3)
+                <td>{{ floor($student3->time / 60) }}時間{{ $student3->time % 60}}分</td>
+            @endforeach
+
+            @foreach ($students4 as $student4)
+                <td>{{ floor($student4->time / 60) }}時間{{ $student4->time % 60}}分</td>
+            @endforeach
+
+            @foreach ($students5 as $student5)
+                <td>{{ floor($student5->time / 60) }}時間{{ $student5->time % 60}}分</td>
+            @endforeach
+
+            @foreach ($students6 as $student6)
+                <td>{{ floor($student6->time / 60) }}時間{{ $student6->time % 60}}分</td>
+            @endforeach
+
+            @foreach ($students7 as $student7)
+                <td>{{ floor($student6->time / 60) }}時間{{ $student6->time % 60}}分</td>
+            @endforeach
             </tr>
-            </table>
-        </div>
+        </table>
     </div>
-<script>
+<!-- <script>
     const studies = @json($students);
     
     // DEBUG
@@ -154,15 +96,15 @@
     // Studentテーブルの全てのデータを探索
     // 注意：このアルゴリズムはテーブルのデータをすべて探索するため、データ量が増えると処理時間も増大してしまう
     // 必要なのは1週間前までのデータなので、何かメソッドを使って効率化できるかもしれない
-    studies.forEach(function(student) {
-        create_time = student['created_at'];
-        student_day = moment(create_time)
+    studies.forEach(function(study) {
+        create_time = study['created_at'];
+        study_day = moment(create_time)
         today = moment()
         // 今日の日付と勉強時間の記録された日を比較し、それが何日前なのかを算出する
         d = today.diff(create_time, 'days')
         if (0 <= d && d < 7) {
-            sum[d]['h'] += student['hour']
-            sum[d]['m'] += student['minute']
+            sum[d]['h'] += study['hour']
+            sum[d]['m'] += study['minute']
             // 60分を超えたら1時間に変換
             if (sum[d]['m'] >= 60) {
                 hour = Math.floor(sum[d]['m'] / 60)
@@ -232,7 +174,7 @@
         }
     }
     });
-</script>
+</script> -->
 </div>
 
 @endsection
