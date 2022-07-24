@@ -57,6 +57,7 @@ return array(
     'Carbon\\Exceptions\\BadFluentConstructorException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/BadFluentConstructorException.php',
     'Carbon\\Exceptions\\BadFluentSetterException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/BadFluentSetterException.php',
     'Carbon\\Exceptions\\BadMethodCallException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/BadMethodCallException.php',
+    'Carbon\\Exceptions\\EndLessPeriodException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/EndLessPeriodException.php',
     'Carbon\\Exceptions\\Exception' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/Exception.php',
     'Carbon\\Exceptions\\ImmutableException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/ImmutableException.php',
     'Carbon\\Exceptions\\InvalidArgumentException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidArgumentException.php',
@@ -149,6 +150,8 @@ return array(
     'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
     'DeepCopy\\TypeFilter\\TypeFilter' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
     'DeepCopy\\TypeMatcher\\TypeMatcher' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+    'DemoStudentData' => $baseDir . '/database/seeds/DemoStudentData.php',
+    'DeptsTableSeeder' => $baseDir . '/database/seeds/DeptsTableSeeder.php',
     'Doctrine\\Common\\Lexer\\AbstractLexer' => $vendorDir . '/doctrine/lexer/lib/Doctrine/Common/Lexer/AbstractLexer.php',
     'Doctrine\\Inflector\\CachedWordInflector' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/CachedWordInflector.php',
     'Doctrine\\Inflector\\GenericLanguageInflectorFactory' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/GenericLanguageInflectorFactory.php',
@@ -3573,8 +3576,12 @@ return array(
     'SebastianBergmann\\Type\\VoidType' => $vendorDir . '/sebastian/type/src/type/VoidType.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+<<<<<<< HEAD
     'StudentTableSeeder' => $baseDir . '/database/seeds/StudentTableSeeder.php',
     'StudentTableSeederForGraph' => $baseDir . '/database/seeds/StudentTableSeederForGraph.php',
+=======
+    'StudyTableSeeder' => $baseDir . '/database/seeds/StudyTableSeeder.php',
+>>>>>>> feature/view_learning_time
     'Symfony\\Component\\Console\\Application' => $vendorDir . '/symfony/console/Application.php',
     'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => $vendorDir . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
     'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => $vendorDir . '/symfony/console/CommandLoader/ContainerCommandLoader.php',
