@@ -19,7 +19,7 @@ class StudentTableSeeder extends Seeder
                 'hour' => mt_rand(0, 23),
                 'minute' => mt_rand(0, 59),
                 'comment' => "サンプルコメント: ${num}",
-                'user_id' => 5409,
+                'user_id' => mt_rand(5401, 5440),
                 'created_at' => $date,
                 'updated_at' => $date,
             ]);
@@ -32,7 +32,7 @@ class StudentTableSeeder extends Seeder
                 'hour' => mt_rand(0, 23),
                 'minute' => mt_rand(0, 59),
                 'comment' => "サンプルコメント: ${num}",
-                'user_id' => 5409,
+                'user_id' => mt_rand(5401, 5440),
                 'created_at' => $date,
                 'updated_at' => $date,
             ]);
@@ -45,7 +45,7 @@ class StudentTableSeeder extends Seeder
                 'hour' => mt_rand(0, 23),
                 'minute' => mt_rand(0, 59),
                 'comment' => "サンプルコメント: ${num}",
-                'user_id' => 5409,
+                'user_id' => mt_rand(5401, 5440),
                 'created_at' => $date,
                 'updated_at' => $date,
             ]);
