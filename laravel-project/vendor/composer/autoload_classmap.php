@@ -3576,12 +3576,8 @@ return array(
     'SebastianBergmann\\Type\\VoidType' => $vendorDir . '/sebastian/type/src/type/VoidType.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
-<<<<<<< HEAD
     'StudentTableSeeder' => $baseDir . '/database/seeds/StudentTableSeeder.php',
     'StudentTableSeederForGraph' => $baseDir . '/database/seeds/StudentTableSeederForGraph.php',
-=======
-    'StudyTableSeeder' => $baseDir . '/database/seeds/StudyTableSeeder.php',
->>>>>>> feature/view_learning_time
     'Symfony\\Component\\Console\\Application' => $vendorDir . '/symfony/console/Application.php',
     'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => $vendorDir . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
     'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => $vendorDir . '/symfony/console/CommandLoader/ContainerCommandLoader.php',
