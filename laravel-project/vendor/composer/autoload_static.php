@@ -3996,12 +3996,8 @@ class ComposerStaticInit48fb6c1488cfda42d5f60bad554cac58
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/type/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
-<<<<<<< HEAD
         'StudentTableSeeder' => __DIR__ . '/../..' . '/database/seeds/StudentTableSeeder.php',
         'StudentTableSeederForGraph' => __DIR__ . '/../..' . '/database/seeds/StudentTableSeederForGraph.php',
-=======
-        'StudyTableSeeder' => __DIR__ . '/../..' . '/database/seeds/StudyTableSeeder.php',
->>>>>>> feature/view_learning_time
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
         'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => __DIR__ . '/..' . '/symfony/console/CommandLoader/ContainerCommandLoader.php',

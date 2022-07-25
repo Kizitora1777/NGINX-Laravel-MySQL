@@ -1,22 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.app_admin')
 
 @section('content')
-<link href="css/hidden.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
-
-{{-- chartjs-adapter-date-fns --}}
-<script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
-
-{{-- chartjs-adapter-luxon --}}
-<script src="https://cdn.jsdelivr.net/npm/luxon@^2"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@^1"></script>
-
-{{-- chartjs-adapter-moment --}}
-<script src="https://cdn.jsdelivr.net/npm/moment@^2"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
+<script src="{{ asset('/js/makegraph.js') }}"></script>
 
 
 <div class="container">
@@ -121,7 +108,7 @@
         </div>
     </div>
 <!-- 表示がうまくいってないので修正する -->
-<script>
+<!-- <script>
     const studies = @json($students);
     
     // DEBUG
@@ -233,7 +220,7 @@
         }
     }
     });
-</script>
+</script> -->
 </div>
 
 @endsection
